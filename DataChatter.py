@@ -86,14 +86,14 @@ def main():
     if st.button("Chat with Website"):
         subprocess.Popen(["streamlit", "run", "chat_with_website.py"])
     if st.button("Chat with PDF"):
-        subprocess.Popen(["streamlit", "run", "chat_with_website.py"])
+        subprocess.Popen(["streamlit", "run", "chat_with_pdf.py"])
     if st.button("Chat with CSV"):
-        subprocess.Popen(["streamlit", "run", "chat_with_website.py"])
+        subprocess.Popen(["streamlit", "run", "csvreader.py"])
     if st.button("Chat with SQL Database"):
         subprocess.Popen(["streamlit", "run", "chat_with_website.py"])
     st.markdown("<p class='info'>Ask any question related to Domain that we have below seamlessly without worrying about selecting/uploading datafiles</p>", unsafe_allow_html=True)
     if st.button("Chat with Investment Banker"):
-        subprocess.Popen(["streamlit", "run", "chat_with_website.py"])
+        subprocess.Popen(["streamlit", "run", "InvestmentBanker.py"])
 if __name__ == "__main__":
     main()
 

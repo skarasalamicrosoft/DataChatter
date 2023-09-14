@@ -13,7 +13,7 @@ openai.api_key = "6693a6eec2eb4b9b9f4ff83d5809fb36"
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
-        pdf_reader = PdfReader(pdf)
+        pdf_reader = PdfReader("investmentbanking.pdf")
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
@@ -32,7 +32,7 @@ def get_text_chunks(text):
 
 def main():
 
-    st.set_page_config(page_title="Chat with multiple PDFs",
+    st.set_page_config(page_title="Chat with Investment Banking",
                        page_icon=":books:")
 
     if "conversation" not in st.session_state:
@@ -40,14 +40,11 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("Chat with PDFs :books:")
-    prompt = st.text_input("Ask a question about your documents:")
+    st.header("GPT Investment Banking")
+    prompt = st.text_input("Ask a question about Investment Banking:")
 
-    with st.sidebar:
-        st.subheader("Your documents")
-        pdf_docs = st.file_uploader(
-            "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
-    if st.button("Process"):
+    pdf_docs = "investmentbanking.pdf"
+    if st.button("Submit Query"):
         with st.spinner("Processing"):
             # get pdf text
             raw_text = get_pdf_text(pdf_docs)
