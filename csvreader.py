@@ -4,7 +4,7 @@ from pandasai.llm.openai import OpenAI
 from pandasai import PandasAI
 
 # Define your OpenAI API key
-openai_api_key = "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"
+openai_api_key = "sk-"
 
 def chat_with_csv(df, prompt):
     llm = OpenAI(api_token=openai_api_key)
